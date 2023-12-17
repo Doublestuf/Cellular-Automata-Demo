@@ -61,12 +61,10 @@ def check_nearby_tiles():
         except:
             continue
         right_filled = cells_filled[right_location]
-        
-        filled = cells_filled[location]
-        
-        if left_filled and right_filled and not filled:
+
+        if left_filled and right_filled:
             cells_filled[location] = True
-        elif not left_filled and not right_filled and filled:
+        elif not left_filled and not right_filled:
             cells_filled[location] = False
             
 def check_nearby_tiles_width():
@@ -81,8 +79,6 @@ def check_nearby_tiles_width():
         except:
             continue
         right_filled = cells_filled[right_location]
-        
-        filled = cells_filled[location]
         
         if left_filled and right_filled:
             cells_filled[location] = True
